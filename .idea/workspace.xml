@@ -134,8 +134,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/maintenance" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/maintenance" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -151,11 +158,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602363667964</updated>
-      <workItem from="1602363669022" duration="1048000" />
+      <workItem from="1602363669022" duration="12574000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602377703147">
+      <screen x="118" y="0" width="1802" height="1080" />
+    </state>
+    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1802.1080@118.0.1802.1080" timestamp="1602377703147" />
+    <state x="558" y="175" key="SettingsEditor" timestamp="1602367497487">
+      <screen x="118" y="0" width="1802" height="1080" />
+    </state>
+    <state x="558" y="175" key="SettingsEditor/118.0.1802.1080@118.0.1802.1080" timestamp="1602367497487" />
+    <state x="682" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1602367506648">
+      <screen x="118" y="0" width="1802" height="1080" />
+    </state>
+    <state x="682" y="239" width="672" height="678" key="search.everywhere.popup/118.0.1802.1080@118.0.1802.1080" timestamp="1602367506648" />
   </component>
 </project>

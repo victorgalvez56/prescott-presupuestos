@@ -20,3 +20,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+//Route::get('/areas', [App\Http\Controllers\AreasController::class, 'index'])->name('home');
+
+/* Maintenance */
+
+/* Resource Areas */
+Route::resource('areas', App\Http\Controllers\Maintenance\AreasController::class);
+
+/* Resource Batchs */
+Route::resource('batchs', App\Http\Controllers\Maintenance\BatchsController::class);
