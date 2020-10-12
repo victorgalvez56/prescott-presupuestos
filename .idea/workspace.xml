@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ac6c86c-ede2-4753-bd3c-92256d240a96" name="Default Changelist" comment="" />
+    <list default="true" id="3ac6c86c-ede2-4753-bd3c-92256d240a96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/UsersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/areas/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/batchs/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/users/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/users/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/AreasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/AreasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/BatchsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/BatchsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Maintenance/AreasModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Maintenance/AreasModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224902_create_areas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_224902_create_areas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/areas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/areas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/areas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/areas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/batchs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/batchs/index.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -127,6 +166,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ihdHC3KIKYq0OaEIAwpi0Tkiwr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -142,6 +182,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/maintenance" />
+      <recent name="$PROJECT_DIR$/resources/views/maintenance/batchs" />
+      <recent name="$PROJECT_DIR$/resources/views/maintenance/areas" />
     </key>
   </component>
   <component name="RunManager">
@@ -158,18 +200,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602363667964</updated>
-      <workItem from="1602363669022" duration="12574000" />
+      <workItem from="1602363669022" duration="13250000" />
+      <workItem from="1602390811913" duration="12380000" />
+      <workItem from="1602472347594" duration="118000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602377703147">
+    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602451326027">
       <screen x="118" y="0" width="1802" height="1080" />
     </state>
-    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1802.1080@118.0.1802.1080" timestamp="1602377703147" />
+    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1802.1080@118.0.1802.1080" timestamp="1602451326027" />
     <state x="558" y="175" key="SettingsEditor" timestamp="1602367497487">
       <screen x="118" y="0" width="1802" height="1080" />
     </state>

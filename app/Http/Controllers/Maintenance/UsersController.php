@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Maintenance;
 
 use App\Http\Controllers\Controller;
-use App\Models\Maintenance\AreasModel;
-use App\Models\Maintenance\BatchsModel;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class BatchsController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +15,8 @@ class BatchsController extends Controller
      */
     public function index()
     {
-        $batchs = BatchsModel:: join('areas', 'areas.id', '=', 'batchs.area_id')
-            ->orderby('batchs.id', 'asc')
-            ->where('batchs.status',"=", 'available')
-            ->select('batchs.*', 'areas.name as name_area')
-            ->get();
-
-        return view('maintenance.batchs.index', compact('batchs'));
+        $users = User::all();
+        return view('maintenance.users.index', compact('users'));
     }
 
     /**

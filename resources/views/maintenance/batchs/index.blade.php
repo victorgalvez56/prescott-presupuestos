@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title','Áreas')
+@section('title','Partidas')
 
 @section('content_header')
     <div class="container-fluid">
@@ -19,7 +19,16 @@
                 </ol>
             </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
+    <div class="col-sm-12">
+        @if(session()->get('success'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> Correcto!</h5>
+                {{ session()->get('success') }}
+            </div>
+            @endif
+    </div>
 @stop
 @section('content')
     <div class="container-fluid">
@@ -36,7 +45,7 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Área</th>
-                                <th>Creado</th>
+                                <th>Actualización</th>
                                 <th>Opciones</th>
                             </tr>
                             </thead>
@@ -45,14 +54,15 @@
                                 <tr>
                                     <td>{{$batch->name}}</td>
                                     <td>{{$batch->name_area}}</td>
-                                    <td>{{$batch->created_at}}</td>
+                                    <td>{{$batch->updated_at}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{ route('areas.edit',$batch->id)}}" class="btn btn-warning btn-lg"><span
+                                            <a href="{{ route('batchs.edit',$batch->id)}}" class="btn btn-warning btn-lg"><span
                                                     class="fas fa-edit"></span></a>
 
-                                            <form action="{{ route('areas.destroy', $batch->id)}}" method="post">
-
+                                            <form action="{{ route('batchs.destroy', $batch->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
                                                 <button class="btn btn-danger btn-lg" value="{{$batch->id}}"
                                                         id="modalConfirmacion" data-toggle="modal"
                                                         data-target="#modal-default"><span class="fas fa-trash"></span>

@@ -12,7 +12,7 @@ class AreasModel extends Model
 
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'status',
+        'representative_id',
     ];
 }

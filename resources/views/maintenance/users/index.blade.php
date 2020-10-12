@@ -61,8 +61,7 @@
                                                     class="fas fa-edit"></span></a>
 
                                             <form action="{{ route('areas.destroy', $area->id)}}" method="post">
-                                                @csrf
-                                                @method('DELETE')
+
                                                 <button class="btn btn-danger btn-lg" value="{{$area->id}}"
                                                         id="modalConfirmacion" data-toggle="modal"
                                                         data-target="#modal-default"><span class="fas fa-trash"></span>
