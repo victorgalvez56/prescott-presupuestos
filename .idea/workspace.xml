@@ -20,23 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac6c86c-ede2-4753-bd3c-92256d240a96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/UsersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/areas/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/batchs/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/users/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/users/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/maintenance/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/AreasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/AreasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/BatchsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/BatchsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Maintenance/AreasModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Maintenance/AreasModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Maintenance/AreasModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Maintenance/BatchsModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224902_create_areas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_224902_create_areas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/areas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/areas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224902_create_areas_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224926_create_batchs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/AreasTableSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/BatchsTableSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UsersTableSeeder.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/maintenance/areas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/areas/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/maintenance/batchs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/batchs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/users/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/users/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/users/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +172,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ihdHC3KIKYq0OaEIAwpi0Tkiwr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -180,6 +188,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/vendor/adminlte/dist/js/components" />
+      <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$/resources/views/maintenance" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/maintenance" />
       <recent name="$PROJECT_DIR$/resources/views/maintenance/batchs" />
@@ -203,6 +217,7 @@
       <workItem from="1602363669022" duration="13250000" />
       <workItem from="1602390811913" duration="12380000" />
       <workItem from="1602472347594" duration="118000" />
+      <workItem from="1602878515208" duration="12202000" />
     </task>
     <servers />
   </component>
@@ -221,18 +236,27 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602451326027">
-      <screen x="118" y="0" width="1802" height="1080" />
+    <state x="457" y="179" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602884693611">
+      <screen x="118" y="0" width="1242" height="768" />
     </state>
+    <state x="457" y="179" key="#com.intellij.fileTypes.FileTypeChooser/118.0.1242.768@118.0.1242.768" timestamp="1602884693611" />
+    <state x="558" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602887701646">
+      <screen x="118" y="0" width="1242" height="768" />
+    </state>
+    <state x="558" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1242.768@118.0.1242.768" timestamp="1602887701646" />
     <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1802.1080@118.0.1802.1080" timestamp="1602451326027" />
     <state x="558" y="175" key="SettingsEditor" timestamp="1602367497487">
       <screen x="118" y="0" width="1802" height="1080" />
     </state>
     <state x="558" y="175" key="SettingsEditor/118.0.1802.1080@118.0.1802.1080" timestamp="1602367497487" />
-    <state x="682" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1602367506648">
-      <screen x="118" y="0" width="1802" height="1080" />
+    <state x="507" y="170" width="672" height="483" key="search.everywhere.popup" timestamp="1602884873894">
+      <screen x="118" y="0" width="1242" height="768" />
     </state>
+    <state x="507" y="170" width="672" height="483" key="search.everywhere.popup/118.0.1242.768@118.0.1242.768" timestamp="1602884873894" />
     <state x="682" y="239" width="672" height="678" key="search.everywhere.popup/118.0.1802.1080@118.0.1802.1080" timestamp="1602367506648" />
   </component>
 </project>

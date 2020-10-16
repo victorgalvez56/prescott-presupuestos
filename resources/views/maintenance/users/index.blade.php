@@ -1,34 +1,26 @@
 @extends('adminlte::page')
 
-@section('title','Áreas')
+@section('title','Usuarios')
 
 @section('content_header')
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Áreas</h1>
+                <h1>Usuarios</h1>
                 <!--                    --><?php //if ($permisos->insert == 1) : ?>
-                <a href="{{ route('areas.create')}}" class="btn btn-primary btn-flat"><span
-                        class="fa fa-plus"></span>Agregar Área</a>
-            <!--                    --><?php //endif; ?>
+                <a href="{{ route('users.create')}}" class="btn btn-primary btn-flat"><span
+                        class="fa fa-plus"></span>Agregar Usuario</a>
+                <!--                    --><?php //endif; ?>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Áreas</li>
+                    <li class="breadcrumb-item active">Usuarios</li>
                 </ol>
             </div>
         </div>
     </div><!-- /.container-fluid -->
-    <div class="col-sm-12">
-        @if(session()->get('success'))
-            <div class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h5><i class="icon fas fa-check"></i> Correcto!</h5>
-                {{ session()->get('success') }}
-            </div>
-        @endif
-    </div>
+
 @stop
 @section('content')
     <div class="container-fluid">
@@ -36,7 +28,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listado de Áreas</h3>
+                        <h3 class="card-title">Listado de Usuarios</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -44,31 +36,65 @@
                             <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Representante</th>
-                                <th>Creado</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>Actualización</th>
+                                <th>Estado</th>
                                 <th>Opciones</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($areas as $area)
+                            @foreach($users as $user)
                                 <tr>
-                                    <td>{{$area->name}}</td>
-                                    <td>{{$area->name_representative}}</td>
-                                    <td>{{$area->created_at}}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{ route('areas.edit',$area->id)}}" class="btn btn-warning btn-lg"><span
-                                                    class="fas fa-edit"></span></a>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
 
-                                            <form action="{{ route('areas.destroy', $area->id)}}" method="post">
+                                    <td>{{$user->name_rol}}</td>
+                                    <td>{{$user->updated_at}}</td>
+                                    @if($user->status == 'available')
+                                        <td>
+                                            <a class="btn btn-success btn-sm">Disponible</a>
+                                        </td>
 
-                                                <button class="btn btn-danger btn-lg" value="{{$area->id}}"
-                                                        id="modalConfirmacion" data-toggle="modal"
-                                                        data-target="#modal-default"><span class="fas fa-trash"></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{{ route('users.edit',$user->id)}}"
+                                                   class="btn btn-warning btn-lg"><span
+                                                        class="fas fa-edit"></span></a>
+
+                                                <form action="{{ route('users.destroy', $user->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-lg" value="{{$user->id}}"
+                                                            id="modalConfirmacion" data-toggle="modal"
+                                                            data-target="#modal-default"><span
+                                                            class="fas fa-user-times"></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    @else
+                                        <td>
+                                            <a class="btn btn-danger btn-sm">Inhabilitado</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{{ route('users.edit',$user->id)}}"
+                                                   class="btn btn-warning btn-lg"><span
+                                                        class="fas fa-edit"></span></a>
+
+                                                <form action="{{ url('users/enable/'.$user->id) }}" method="post">
+                                                    @csrf
+                                                    <button class="btn btn-success btn-lg" value="{{$user->id}}"
+                                                            id="modalConfirmacion" data-toggle="modal"
+                                                            data-target="#modal-default"><span
+                                                            class="fas fa-user-plus"></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    @endif
+
 
 
                                     {{--                                            <td>--}}
@@ -104,22 +130,7 @@
     <p>Bienvenido a este template</p>
 @stop
 @section('js')
-
-<script>
-    $('#tablas').DataTable({
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No existe registros",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No registros disponibles",
-            "infoFiltered": "(Mostrando de _MAX_ registros totales)",
-            "search": "Buscar",
-            "paginate": {
-                'next': "Siguiente",
-                'previous' : "Anterior"
-            }
-        }
-    });
-</script>
-
+    @include('layouts.footer')
 @endsection
+
+

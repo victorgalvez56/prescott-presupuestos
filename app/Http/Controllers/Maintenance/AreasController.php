@@ -20,7 +20,6 @@ class AreasController extends Controller
         $areas = AreasModel::all();
 
         $areas = AreasModel:: join('users', 'users.id', '=', 'areas.representative_id')
-            ->where('areas.status',"=", 'available')
             ->select('areas.*', 'users.name as name_representative')
             ->get();
         return view('maintenance.areas.index', compact('areas'));
@@ -119,4 +118,13 @@ class AreasController extends Controller
         $area->save();
         return redirect('/areas')->with('success', 'Área Suspendida!');
     }
+
+    public function enable($id)
+    {
+        $area = AreasModel::find($id);
+        $area->status = 'available';
+        $area->save();
+        return redirect('/areas')->with('success', 'Área Activada!');
+    }
+
 }

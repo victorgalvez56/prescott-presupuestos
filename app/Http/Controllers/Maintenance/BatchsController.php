@@ -18,8 +18,7 @@ class BatchsController extends Controller
     public function index()
     {
         $batchs = BatchsModel:: join('areas', 'areas.id', '=', 'batchs.area_id')
-            ->orderby('batchs.id', 'asc')
-            ->where('batchs.status',"=", 'available')
+            ->orderby('batchs.status', 'desc')
             ->select('batchs.*', 'areas.name as name_area')
             ->get();
 
@@ -116,6 +115,14 @@ class BatchsController extends Controller
         $batch = BatchsModel::find($id);
         $batch->status = 'unavailable';
         $batch->save();
-        return redirect('/batchs')->with('success', 'Partida Suspendida!');
+        return redirect('/batchs')->with('success', 'Partida Desactivada!');
     }
+    public function enable($id)
+    {
+        $batch = BatchsModel::find($id);
+        $batch->status = 'available';
+        $batch->save();
+        return redirect('/batchs')->with('success', 'Partida Activada!');
+    }
+
 }

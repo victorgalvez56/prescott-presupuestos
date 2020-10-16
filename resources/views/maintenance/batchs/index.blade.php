@@ -20,15 +20,6 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12">
-        @if(session()->get('success'))
-            <div class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h5><i class="icon fas fa-check"></i> Correcto!</h5>
-                {{ session()->get('success') }}
-            </div>
-            @endif
-    </div>
 @stop
 @section('content')
     <div class="container-fluid">
@@ -46,6 +37,7 @@
                                 <th>Nombre</th>
                                 <th>Área</th>
                                 <th>Actualización</th>
+                                <th>Estado</th>
                                 <th>Opciones</th>
                             </tr>
                             </thead>
@@ -55,31 +47,49 @@
                                     <td>{{$batch->name}}</td>
                                     <td>{{$batch->name_area}}</td>
                                     <td>{{$batch->updated_at}}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{ route('batchs.edit',$batch->id)}}" class="btn btn-warning btn-lg"><span
-                                                    class="fas fa-edit"></span></a>
+                                    @if($batch->status == 'available')
+                                        <td>
+                                            <a class="btn btn-success btn-sm">Disponible</a>
+                                        </td>
 
-                                            <form action="{{ route('batchs.destroy', $batch->id)}}" method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-danger btn-lg" value="{{$batch->id}}"
-                                                        id="modalConfirmacion" data-toggle="modal"
-                                                        data-target="#modal-default"><span class="fas fa-trash"></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{{ route('batchs.edit',$batch->id)}}"
+                                                   class="btn btn-warning btn-lg"><span
+                                                        class="fas fa-edit"></span></a>
 
+                                                <form action="{{ route('batchs.destroy', $batch->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-lg" value="{{$batch->id}}"
+                                                            id="modalConfirmacion" data-toggle="modal"
+                                                            data-target="#modal-default"><span
+                                                            class="far fa-minus-square"></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    @else
+                                        <td>
+                                            <a class="btn btn-danger btn-sm">Inhabilitado</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{{ route('batchs.edit',$batch->id)}}"
+                                                   class="btn btn-warning btn-lg"><span
+                                                        class="fas fa-edit"></span></a>
 
-                                    {{--                                            <td>--}}
-                                    {{--                                                <a href="{{ route('areas.edit',$area->id)}}" class="btn btn-primary">Edit</a>--}}
-                                    {{--                                                <form action="{{ route('areas.destroy', $area->id)}}" method="post">--}}
-                                    {{--                                                    @csrf--}}
-                                    {{--                                                    @method('DELETE')--}}
-                                    {{--                                                    <button class="btn btn-danger" type="submit">Delete</button>--}}
-                                    {{--                                                </form>--}}
-                                    {{--                                            </td>--}}
+                                                <form action="{{ url('batchs/enable/'.$batch->id) }}" method="post">
+                                                    @csrf
+                                                    <button class="btn btn-success btn-lg" value="{{$batch->id}}"
+                                                            id="modalConfirmacion" data-toggle="modal"
+                                                            data-target="#modal-default"><span
+                                                            class="fas fa-plus-square"></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>
@@ -105,22 +115,8 @@
     <p>Bienvenido a este template</p>
 @stop
 @section('js')
-
-<script>
-    $('#tablas').DataTable({
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No existe registros",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No registros disponibles",
-            "infoFiltered": "(Mostrando de _MAX_ registros totales)",
-            "search": "Buscar",
-            "paginate": {
-                'next': "Siguiente",
-                'previous' : "Anterior"
-            }
-        }
-    });
-</script>
-
+    @include('layouts.footer')
 @endsection
+
+
+

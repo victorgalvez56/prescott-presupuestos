@@ -32,6 +32,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 /* Resource Areas */
 Route::resource('areas', App\Http\Controllers\Maintenance\AreasController::class);
+Route::post('areas/enable/{id}', 'App\Http\Controllers\Maintenance\AreasController@enable');
 
 /* Resource Batchs */
 Route::resource('batchs', App\Http\Controllers\Maintenance\BatchsController::class);
+Route::post('batchs/enable/{id}', 'App\Http\Controllers\Maintenance\BatchsController@enable');
+
+/* Resource Users */
+Route::resource('users', App\Http\Controllers\Maintenance\UsersController::class);
+Route::post('users/enable/{id}', 'App\Http\Controllers\Maintenance\UsersController@enable');
+
+/* Permisos */
+Route::get('/test',function (){
+    $user = \App\Models\User::find(1);
+    return $user->rol();
+});

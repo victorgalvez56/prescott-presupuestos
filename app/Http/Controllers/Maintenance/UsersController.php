@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Maintenance;
 
 use App\Http\Controllers\Controller;
+use App\Models\Maintenance\RolesModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::join('roles','users.role_id','=','roles.id')
+            ->select('users.*','roles.name as name_rol')
+        ->get();
         return view('maintenance.users.index', compact('users'));
     }
 
@@ -26,8 +29,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $areas = AreasModel::where('status','=','available')->get();
-        return view('maintenance.batchs.create',compact('areas'));
+        $roles = RolesModel::where('status','=','available')->get();
+        return view('maintenance.users.create',compact('roles'));
     }
 
     /**
@@ -42,14 +45,18 @@ class UsersController extends Controller
 
         $request->validate([
             'name'=>'required',
-            'area_id'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'role_id'=>'required',
         ]);
-        $batchs = new BatchsModel([
+        $user = new User([
             'name' => $request->get('name'),
-            'area_id' => $request->get('area_id'),
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'role_id' => $request->get('role_id')
         ]);
-        $batchs->save();
-        return redirect('batchs')->with('success', 'Partida Guardada!');
+        $user->save();
+        return redirect('users')->with('success', 'Usuario Guardado!');
 
     }
 
@@ -72,9 +79,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $areas = AreasModel::where('status','=','available')->get();
-        $batch = BatchsModel::find($id);
-        return view('maintenance.batchs.edit', compact('batch','areas'));
+        $roles = RolesModel::where('status','=','available')->get();
+        $user = User::find($id);
+        return view('maintenance.users.edit', compact('roles','user'));
     }
 
     /**
@@ -88,14 +95,16 @@ class UsersController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'area_id'=>'required',
+            'email'=>'required',
+            'role_id'=>'required',
         ]);
 
-        $batch = BatchsModel::find($id);
-        $batch->name =  $request->get('name');
-        $batch->area_id = $request->get('area_id');
-        $batch->save();
-        return redirect('/batchs    ')->with('success', 'Partida Actualizada!');
+        $user = User::find($id);
+        $user->name =  $request->get('name');
+        $user->email = $request->get('email');
+        $user->role_id = $request->get('role_id');
+        $user->save();
+        return redirect('/users    ')->with('success', 'Usuario Actualizada!');
     }
 
     /**
@@ -106,9 +115,19 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $batch = BatchsModel::find($id);
-        $batch->status = 'unavailable';
-        $batch->save();
-        return redirect('/batchs')->with('success', 'Partida Suspendida!');
+        $user = User::find($id);
+        $user->status = 'unavailable';
+        $user->save();
+        return redirect('/users')->with('success', 'Usuario Desactivado!');
     }
+
+    public function enable($id)
+    {
+        $user = User::find($id);
+        $user->status = 'available';
+        $user->save();
+        return redirect('/users')->with('success', 'Usuario Activado!');
+    }
+
+
 }
