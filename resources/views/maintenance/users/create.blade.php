@@ -1,12 +1,12 @@
 @extends('adminlte::page')
 
-@section('title','Áreas')
+@section('title','Crear Usuario')
 
 @section('content_header')
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Agregar Área</h1>
+                <h1>Agregar Usuario</h1>
                 <!--                    --><?php //if ($permisos->insert == 1) : ?>
             {{--                    <a href="<?php echo base_url(); ?>mantenimiento/areas/add" class="btn btn-primary btn-flat"><span--}}
             {{--                            class="fa fa-plus"></span>Agregar Área</a>--}}
@@ -15,7 +15,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Área</li>
+                    <li class="breadcrumb-item active">Usuario</li>
                     <li class="breadcrumb-item active">Agregar</li>
 
                 </ol>
@@ -29,9 +29,9 @@
             <div class="col-12">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Nueva área</h3>
+                        <h3 class="card-title">Nueva usuario</h3>
                     </div>
-                    <form method="post" action="{{ route('areas.store') }}">
+                    <form method="post" action="{{ route('users.store') }}">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -40,11 +40,21 @@
                                        placeholder="Ingrese nombre" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Responsable</label>
-                                <select name="representative_id" class="form-control" required>
-                                    <option value="">Seleccione responsable</option>
-                                    @foreach($representatives as $representative)
-                                        <option value="{{$representative->id}}">{{$representative->name}}</option>
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" name="email" class="form-control"
+                                       placeholder="Ingrese email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Password</label>
+                                <input type="password" name="password" class="form-control"
+                                       placeholder="Ingrese password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Rol</label>
+                                <select name="role_id" class="form-control" required>
+                                    <option value="">Seleccione rol</option>
+                                    @foreach($roles as $rol)
+                                        <option value="{{$rol->id}}">{{$rol->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
