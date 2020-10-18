@@ -7,6 +7,7 @@ use App\Models\Maintenance\AreasModel;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class AreasController extends Controller
 {
@@ -17,6 +18,8 @@ class AreasController extends Controller
      */
     public function index()
     {
+        Gate::authorize('have_access','areas.index');
+
         $areas = AreasModel::all();
 
         $areas = AreasModel:: join('users', 'users.id', '=', 'areas.representative_id')
@@ -32,6 +35,8 @@ class AreasController extends Controller
      */
     public function create()
     {
+        Gate::authorize('have_access','areas.create');
+
         $representatives = User::where('status','=','available')->get();
         return view('maintenance.areas.create',compact('representatives'));
     }
@@ -44,6 +49,7 @@ class AreasController extends Controller
      */
     public function store(Request $request)
     {
+        Gate::authorize('have_access','areas.store');
 
         $request->validate([
             'name'=>'required',
@@ -68,6 +74,8 @@ class AreasController extends Controller
      */
     public function show($id)
     {
+        Gate::authorize('have_access','areas.show');
+
         //
     }
 
@@ -79,6 +87,8 @@ class AreasController extends Controller
      */
     public function edit($id)
     {
+        Gate::authorize('have_access','areas.edit');
+
         $area = AreasModel::find($id);
         $representatives = User::where('status','=','available')->get();
         return view('maintenance.areas.edit', compact('area','representatives'));
@@ -93,6 +103,8 @@ class AreasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        Gate::authorize('have_access','areas.update');
+
         $request->validate([
             'name'=>'required',
             'representative_id'=>'required',
@@ -113,6 +125,8 @@ class AreasController extends Controller
      */
     public function destroy($id)
     {
+        Gate::authorize('have_access','areas.delete');
+
         $area = AreasModel::find($id);
         $area->status = 'unavailable';
         $area->save();
@@ -121,6 +135,8 @@ class AreasController extends Controller
 
     public function enable($id)
     {
+        Gate::authorize('have_access','areas.enable');
+
         $area = AreasModel::find($id);
         $area->status = 'available';
         $area->save();

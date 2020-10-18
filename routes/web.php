@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Gate;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,8 @@ Route::resource('users', App\Http\Controllers\Maintenance\UsersController::class
 Route::post('users/enable/{id}', 'App\Http\Controllers\Maintenance\UsersController@enable');
 
 /* Permisos */
-Route::get('/test',function (){
-    $user = \App\Models\User::find(1);
-    return $user->rol();
-});
+//Route::get('/users',function (){
+//    $user = \App\Models\User::find(1);
+//    Gate::authorize('have_access','users.index');
+//    return $user;
+//});

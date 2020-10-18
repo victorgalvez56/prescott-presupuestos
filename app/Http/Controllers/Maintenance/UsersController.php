@@ -104,7 +104,7 @@ class UsersController extends Controller
         $user->email = $request->get('email');
         $user->role_id = $request->get('role_id');
         $user->save();
-        return redirect('/users    ')->with('success', 'Usuario Actualizada!');
+        return redirect('/users    ')->with('success', 'Usuario Actualizado!');
     }
 
     /**
