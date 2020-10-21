@@ -19,18 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ac6c86c-ede2-4753-bd3c-92256d240a96" name="Default Changelist" comment="crud user finish - create.blade.php">
-      <change afterPath="$PROJECT_DIR$/app/Traits/UserTrait.php" afterDir="false" />
+    <list default="true" id="3ac6c86c-ede2-4753-bd3c-92256d240a96" name="Default Changelist" comment="User trait permissions gate ok">
+      <change afterPath="$PROJECT_DIR$/resources/views/budgets/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/AreasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/AreasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Maintenance/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Maintenance/PermissionsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Maintenance/PermissionsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224902_create_areas_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224926_create_batchs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_12_044551_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_044551_create_permissions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/AreasTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AreasTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/maintenance/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/maintenance/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +207,8 @@
       <workItem from="1602878515208" duration="18553000" />
       <workItem from="1602911668047" duration="95000" />
       <workItem from="1602993604024" duration="11669000" />
-      <workItem from="1603052530131" duration="1176000" />
+      <workItem from="1603052530131" duration="4452000" />
+      <workItem from="1603165535908" duration="17214000" />
     </task>
     <task id="LOCAL-00001" summary="crud user finish">
       <created>1602891724442</created>
@@ -225,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602894597225</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="User trait permissions gate ok">
+      <created>1603053751661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603053751661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,26 +252,27 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="crud user finish" />
     <MESSAGE value="crud user finish - create.blade.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud user finish - create.blade.php" />
+    <MESSAGE value="User trait permissions gate ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="User trait permissions gate ok" />
   </component>
   <component name="WindowStateProjectService">
     <state x="457" y="179" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602884693611">
       <screen x="118" y="0" width="1242" height="768" />
     </state>
     <state x="457" y="179" key="#com.intellij.fileTypes.FileTypeChooser/118.0.1242.768@118.0.1242.768" timestamp="1602884693611" />
-    <state x="558" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602887701646">
+    <state x="558" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603169493385">
       <screen x="118" y="0" width="1242" height="768" />
     </state>
-    <state x="558" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1242.768@118.0.1242.768" timestamp="1602887701646" />
+    <state x="558" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1242.768@118.0.1242.768" timestamp="1603169493385" />
     <state x="757" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/118.0.1802.1080@118.0.1802.1080" timestamp="1602451326027" />
     <state x="558" y="175" key="SettingsEditor" timestamp="1602367497487">
       <screen x="118" y="0" width="1802" height="1080" />
     </state>
     <state x="558" y="175" key="SettingsEditor/118.0.1802.1080@118.0.1802.1080" timestamp="1602367497487" />
-    <state x="339" y="116" key="Vcs.Push.Dialog.v2" timestamp="1602894598494">
+    <state x="339" y="116" key="Vcs.Push.Dialog.v2" timestamp="1603053753125">
       <screen x="118" y="0" width="1242" height="768" />
     </state>
-    <state x="339" y="116" key="Vcs.Push.Dialog.v2/118.0.1242.768@118.0.1242.768" timestamp="1602894598494" />
+    <state x="339" y="116" key="Vcs.Push.Dialog.v2/118.0.1242.768@118.0.1242.768" timestamp="1603053753125" />
     <state x="507" y="170" width="672" height="483" key="search.everywhere.popup" timestamp="1602884873894">
       <screen x="118" y="0" width="1242" height="768" />
     </state>

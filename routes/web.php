@@ -43,9 +43,7 @@ Route::post('batchs/enable/{id}', 'App\Http\Controllers\Maintenance\BatchsContro
 Route::resource('users', App\Http\Controllers\Maintenance\UsersController::class);
 Route::post('users/enable/{id}', 'App\Http\Controllers\Maintenance\UsersController@enable');
 
-/* Permisos */
-//Route::get('/users',function (){
-//    $user = \App\Models\User::find(1);
-//    Gate::authorize('have_access','users.index');
-//    return $user;
-//});
+/* Resource Permissions */
+
+/* Resource Budgets*/
+Route::resource('budgets', App\Http\Controllers\Budgets\BudgetsController::class);

@@ -9,11 +9,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $users = User::join('roles','users.role_id','=','roles.id')
@@ -22,23 +18,14 @@ class UsersController extends Controller
         return view('maintenance.users.index', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        $roles = RolesModel::where('status','=','available')->get();
-        return view('maintenance.users.create',compact('roles'));
+//        $roles = RolesModel::where('status','=','available')->get();
+//        return view('maintenance.users.create',compact('roles'));
+
+        echo "create";
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
@@ -60,23 +47,11 @@ class UsersController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Batchs  $batchs
-     * @return \Illuminate\Http\Response
-     */
     public function show(Batchs $batchs)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Batchs  $batchs
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $roles = RolesModel::where('status','=','available')->get();
@@ -84,13 +59,6 @@ class UsersController extends Controller
         return view('maintenance.users.edit', compact('roles','user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Batchs  $batchs
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -107,12 +75,6 @@ class UsersController extends Controller
         return redirect('/users    ')->with('success', 'Usuario Actualizado!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Batchs  $batchs
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $user = User::find($id);
