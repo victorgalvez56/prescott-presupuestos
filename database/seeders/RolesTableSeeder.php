@@ -16,8 +16,8 @@ class RolesTableSeeder extends Seeder
     {
         RolesModel::create(['name' => 'Administrador Sistema']);
         RolesModel::create(['name' => 'Administrador General']);
-        RolesModel::create(['name' => 'Responsable Finanzas']);
-        RolesModel::create(['name' => 'Responsable Área']);
+        RolesModel::create(['name' => 'Empleados']);
+        RolesModel::create(['name' => 'Clientes']);
 
     }
 }

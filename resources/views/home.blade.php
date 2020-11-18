@@ -1,15 +1,27 @@
-@extends('adminlte::page')
+@include('layouts.header')
+@include('layouts.no-logged-users.home')
+@include('layouts.footer')
+{{--@extends('layouts.app')--}}
 
-@section('title','Dashboard')
+{{--@section('content')--}}
+{{--    <div class="row justify-content-center">--}}
+{{--        <div class="col-md-8">--}}
+{{--            <div class="card">--}}
+{{--                <div class="card-header">Dashboard</div>--}}
 
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
-@section('content')
-    <p>Bienvenido a este template</p>
-@stop
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-
+{{--                <div class="card-body">--}}
+{{--                    @if (session('status'))--}}
+{{--                        <div class="alert alert-success" role="alert">--}}
+{{--                            {{ session('status') }}--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+{{--                    @if(Auth::check())--}}
+{{--                        {{Auth::user()->name}} is logged in!--}}
+{{--                    @else--}}
+{{--                        Guest session--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--@endsection--}}

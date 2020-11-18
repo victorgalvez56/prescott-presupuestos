@@ -233,7 +233,7 @@ return [
     'menu' => [
         [
             'text' => 'Inicio',
-            'route'  => 'home',
+            'route' => 'home',
         ],
 
 //        ['header' => 'account_settings'],
@@ -248,20 +248,18 @@ return [
 //            'icon' => 'fas fa-fw fa-lock',
 //        ],
         [
-            'text'    => 'Mantenimiento',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'Mantenimiento',
+            'icon' => 'fas fa-fw fa-share',
             'submenu' => [
-                [
-                    'text' => 'Áreas',
-                    'route'  => 'areas.index',
+                ['text' => 'Áreas',
+                    'route' => 'areas.index',
                 ],
-                [
-                    'text' => 'Partidas',
-                    'route'  => 'batchs.index',
+                ['text' => 'Partidas',
+                    'route' => 'batchs.index',
                 ],
                 [
                     'text' => 'Users',
-                    'route'  => 'users.index',
+                    'route' => 'users.index',
                 ],
             ],
         ]

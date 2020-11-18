@@ -23,27 +23,23 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::resource('general_manager', 'EmployeesController');
+Route::resource('customers', 'CustomersController');
+
+Route::get('servicios', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
+Route::get('portafolio', [App\Http\Controllers\HomeController::class, 'briefcase'])->name('briefcase');
+Route::get('contacto', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
 
 
+Route::get('cliente/logo', 'Customers@index_logo');
+Route::get('cliente/planners', 'Customers@index_logo');
+
+Route::get('administrador',  [App\Http\Controllers\GeneralManager::class, 'index'])->name('administrator');
+Route::get('empleados/logo', 'Customers@index_logo');
+Route::get('empleados/planners', 'Customers@index_logo');
 
 
-//Route::get('/areas', [App\Http\Controllers\AreasController::class, 'index'])->name('home');
-
-/* Maintenance */
-
-/* Resource Areas */
-Route::resource('areas', App\Http\Controllers\Maintenance\AreasController::class);
-Route::post('areas/enable/{id}', 'App\Http\Controllers\Maintenance\AreasController@enable');
-
-/* Resource Batchs */
-Route::resource('batchs', App\Http\Controllers\Maintenance\BatchsController::class);
-Route::post('batchs/enable/{id}', 'App\Http\Controllers\Maintenance\BatchsController@enable');
-
-/* Resource Users */
-Route::resource('users', App\Http\Controllers\Maintenance\UsersController::class);
-Route::post('users/enable/{id}', 'App\Http\Controllers\Maintenance\UsersController@enable');
-
-/* Resource Permissions */
-
-/* Resource Budgets*/
-Route::resource('budgets', App\Http\Controllers\Budgets\BudgetsController::class);
+Route::get('mostrar/{id}',  [App\Http\Controllers\GeneralManager::class, 'show'])->name('show.customers');
+Route::get('mostrar/logos/{id}',  [App\Http\Controllers\GeneralManager::class, 'show_logos'])->name('show.logos');
+Route::get('agregar/logo/{id}',  [App\Http\Controllers\GeneralManager::class, 'add_logo'])->name('add.logo');
+Route::post('registrar/logo',  [App\Http\Controllers\GeneralManager::class, 'store_logo'])->name('store.logo');

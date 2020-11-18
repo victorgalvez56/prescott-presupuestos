@@ -17,6 +17,8 @@ class BatchsController extends Controller
      */
     public function index()
     {
+        $this->authorize('have_access', 'batchs.index');
+
         $batchs = BatchsModel:: join('areas', 'areas.id', '=', 'batchs.area_id')
             ->orderby('batchs.status', 'desc')
             ->select('batchs.*', 'areas.name as name_area')
