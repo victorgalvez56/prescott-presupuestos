@@ -138,48 +138,82 @@
                 <!-- dashboard content-->
                 <div class="col-md-9">
                     <div class="dashboard-title   fl-wrap">
-                        <h3>Información del cliente</h3>
+                        <h3>Planners </h3>
+                        <a href="{{route('add.planner',$customer['id'])}}" class=" brd-show-share color2-bg"
+                           data-tooltip="Agregar">Agregar Planner<i
+                                class="fal fa-plus"></i></a>
                     </div>
-                    <div class="profile-edit-container fl-wrap block_box">
-                        <div class="custom-form">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label>Nombre<i class="fal fa-user"></i></label>
-                                    <input type="text" placeholder="Address of your business" value=""/>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Correo<i class="far fa-envelope"></i>  </label>
-                                    <input type="text" placeholder="JessieManrty@domain.com" value=""/>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Phone<i class="far fa-phone"></i>  </label>
-                                    <input type="text" placeholder="+7(123)987654" value=""/>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label> Website <i class="far fa-globe"></i>  </label>
-                                    <input type="text" placeholder="themeforest.net" value=""/>
-                                </div>
-                                <div class="col-sm-12">
-                                    <label>Facebook <i class="fab fa-facebook"></i></label>
-                                    <input type="text" placeholder="https://www.facebook.com/" value=""/>
-                                    <label>Twitter<i class="fab fa-twitter"></i>  </label>
-                                    <input type="text" placeholder="https://twitter.com/" value=""/>
-                                    <label>Vkontakte<i class="fab fa-vk"></i>  </label>
-                                    <input type="text" placeholder="https://vk.com" value=""/>
-                                    <label> Instagram <i class="fab fa-instagram"></i>  </label>
-                                    <input type="text" placeholder="https://www.instagram.com/" value=""/>
-                                    <button class="btn    color2-bg  float-btn">Send Listing<i class="fal fa-paper-plane"></i></button>
+                    <div class="dashboard-list-box  fl-wrap">
+                        @foreach($planners as $planner)
+                            <div class="dashboard-list fl-wrap">
+                                <div class="dashboard-message">
+                                    <div class="booking-list-contr">
+                                        <a href="{{route('show.planners',$planner['id'])}}" class="color-bg tolt"
+                                           data-microtip-position="left" data-tooltip="Edit"><i
+                                                class="fal fa-edit"></i></a>
+                                        <a href="#" class="red-bg tolt" data-microtip-position="left"
+                                           data-tooltip="Delete"><i
+                                                class="fal fa-trash"></i></a>
+                                    </div>
+                                    <div class="dashboard-message-text">
+                                        <div class="single-slider fl-wrap">
+                                            <div
+                                                class="swiper-container-horizontal swiper-container-autoheight"
+                                            >
+                                                <div class="swiper-wrapper lightgallery"
+                                                >
+
+                                                    <div class="swiper-slide hov_zoom swiper-slide-active"
+                                                         data-swiper-slide-index="0"
+                                                         >
+                                                        <iframe
+                                                            src="//view.officeapps.live.com/op/embed.aspx?src=http://repositorio.utn.edu.ec/bitstream/123456789/589/17/17%20Plan%20de%20Pruebas.doc"
+                                                            style="width:100%; height:50%; border: #0000FF;min-height:500px;"></iframe>
+
+
+
+
+
+                                                        <img src="{{asset($planner['path'])}}"
+                                                             alt="">
+                                                        <a href="{{asset($planner['path'])}}"
+                                                           class="box-media-zoom  popup-image"><i
+                                                                class="fal fa-search"></i></a>
+                                                        <h4><a href="listing-single.html">{{$planner['name']}}</a></h4>
+                                                        <div class="geodir-category-location clearfix"><a
+                                                                href="#"> {{$planner['description']}}<br>{{$planner['created_at']}}</a></div>
+
+                                                    </div>
+                                                </div>
+                                                <span class="swiper-notification" aria-live="assertive"
+                                                      aria-atomic="true"></span>
+                                            </div>
+                                        </div>
+                                        {{--                                        <img id="myImg" src="{{asset($logo['path'])}}" alt="">--}}
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
+
                     </div>
+                    <!-- dashboard-list-box end-->
+                    {{--                    <div class="pagination">--}}
+                    {{--                        <a href="#" class="prevposts-link"><i class="fas fa-caret-left"></i><span>Prev</span></a>--}}
+                    {{--                        <a href="#">1</a>--}}
+                    {{--                        <a href="#" class="current-page">2</a>--}}
+                    {{--                        <a href="#">3</a>--}}
+                    {{--                        <a href="#">...</a>--}}
+                    {{--                        <a href="#">7</a>--}}
+                    {{--                        <a href="#" class="nextposts-link"><span>Next</span><i class="fas fa-caret-right"></i></a>--}}
+                    {{--                    </div>--}}
                 </div>
+                <!-- dashboard content end-->
             </div>
         </section>
-        <!--  section  end-->
-        <div class="limit-box fl-wrap"></div>
     </div>
     <!--content end-->
 </div>
+
 
 @include('layouts.footer')

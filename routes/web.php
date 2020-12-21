@@ -35,11 +35,17 @@ Route::get('cliente/logo', 'Customers@index_logo');
 Route::get('cliente/planners', 'Customers@index_logo');
 
 Route::get('administrador',  [App\Http\Controllers\GeneralManager::class, 'index'])->name('administrator');
-Route::get('empleados/logo', 'Customers@index_logo');
-Route::get('empleados/planners', 'Customers@index_logo');
+Route::get('empleados/logo', 'CustomersController@index_logo');
+Route::get('empleados/planners', 'CustomersController@index_logo');
 
 
 Route::get('mostrar/{id}',  [App\Http\Controllers\GeneralManager::class, 'show'])->name('show.customers');
+
 Route::get('mostrar/logos/{id}',  [App\Http\Controllers\GeneralManager::class, 'show_logos'])->name('show.logos');
 Route::get('agregar/logo/{id}',  [App\Http\Controllers\GeneralManager::class, 'add_logo'])->name('add.logo');
 Route::post('registrar/logo',  [App\Http\Controllers\GeneralManager::class, 'store_logo'])->name('store.logo');
+
+
+Route::get('mostrar/planners/{id}',  [App\Http\Controllers\GeneralManager::class, 'show_planners'])->name('show.planners');
+Route::get('agregar/planner/{id}',  [App\Http\Controllers\GeneralManager::class, 'add_planner'])->name('add.planner');
+Route::post('registrar/planner',  [App\Http\Controllers\GeneralManager::class, 'store_planner'])->name('store.planner');

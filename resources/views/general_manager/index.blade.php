@@ -120,10 +120,10 @@
                             <div class="user-profile-menu">
                                 <h3>Contenido</h3>
                                 <ul class="no-list-style">
-                                    <li><a href="dashboard.html"><i class="fal fa-chart-line"></i>Logos</a></li>
-                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Planners <span>7</span></a>
+                                    <li><a href="dashboard.html"><i class="fal fa-chart-line"></i>Todos los Logos</a></li>
+                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Todos los Planners <span>7</span></a>
                                     </li>
-                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Clientes <span>7</span></a>
+                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Todos los Clientes <span>7</span></a>
                                     </li>
 
                                     {{--                                    <li><a href="dashboard-myprofile.html"><i class="fal fa-user-edit"></i> Edit profile</a></li>--}}

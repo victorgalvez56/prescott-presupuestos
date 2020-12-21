@@ -122,11 +122,8 @@
                                     {{$customer['name']}}
                                 </h3>
                                 <ul class="no-list-style">
-                                    <li><a href="{{route('show.logos',$customer['id'])}}"><i
-                                                class="fal fa-chart-line"></i>Logos</a></li>
-                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Planners <span>7</span></a>
-                                    </li>
-                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Clientes <span>7</span></a>
+                                    <li><a href="{{route('show.logos',$customer['id'])}}"><i class="fal fa-chart-line"></i>Logos</a></li>
+                                    <li><a href="{{route('show.planners',$customer['id'])}}"><i class="fal fa-rss"></i>Planners <span>7</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -168,11 +165,15 @@
                                                     <div class="swiper-slide hov_zoom swiper-slide-active"
                                                          data-swiper-slide-index="0"
                                                          >
+
                                                         <img src="{{asset($logo['path'])}}"
                                                              alt="">
                                                         <a href="{{asset($logo['path'])}}"
                                                            class="box-media-zoom  popup-image"><i
                                                                 class="fal fa-search"></i></a>
+
+
+
                                                         <h4><a href="listing-single.html">{{$logo['name']}}</a></h4>
                                                         <div class="geodir-category-location clearfix"><a
                                                                 href="#"> {{$logo['description']}}<br>{{$logo['created_at']}}</a></div>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\administrator\Brandings;
 use App\Models\administrator\DetailsLogos;
+use App\Models\administrator\DetailsPlanners;
 use App\Models\administrator\Logos;
+use App\Models\administrator\Planners;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -102,6 +104,87 @@ class GeneralManager extends Controller
             ]);
             $details_logo->save();
             return redirect(route('show.logos',$request->get('customer')));
+
+//            return view('general_manager.show_logos',compact('customer','logos'))->with('success', 'Logo  guardado!');
+        }
+
+    }
+
+
+    public function show_planners($id)
+    {
+        $customer = User::where('id', '=', $id)->first();
+        $planners = Planners::join('details_planners', 'details_planners.planner_id', '=', 'planners.id')
+            ->join('brandings', 'brandings.id', '=', 'details_planners.branding_id')
+            ->where('customer_id','=',$id)
+            ->get()
+            ->toArray();
+        return view('general_manager.show_planners', compact('customer', 'planners'));
+    }
+
+    public function add_planner($id)
+    {
+        $customer = User::where('id', '=', $id)->first();
+        return view('general_manager.add_planner', compact('customer'));
+    }
+    public function store_planner(Request $request)
+    {
+
+        $archivo_planner = $request->file('image');
+        $extension = $archivo_planner->getClientOriginalExtension();
+
+        $planners = Planners::join('details_planners', 'details_planners.planner_id', '=', 'planners.id')
+            ->join('brandings', 'brandings.id', '=', 'details_planners.branding_id')
+            ->where('brandings.customer_id', '=', $request->get('customer'))
+            ->get()
+            ->toArray();
+        $quantity_planners = count($planners) + 1;
+
+        $filename = "cliente_" . $request->get('customer') ."_number". $quantity_planners . "." . $extension;
+        $archivo_planner->move('storage/administrator/uploads/planners/', $filename);
+
+        $exist_branding = Brandings::where('customer_id', '=', $request->get('customer'))->get()->toArray();
+        if (empty($exist_branding)) {
+            $branding_save = new Brandings([
+                'customer_id' => $request->get('customer')
+            ]);
+            $branding_save->save();
+
+            $planner_save = new Planners([
+                'employee_id' => $request->get('employee'),
+                'path' => 'storage/administrator/uploads/logos/' . $filename,
+            ]);
+            $planner_save->save();
+
+            $details_planner = new DetailsPlanners([
+                'name' => $request->get('name'),
+                'description' => $request->get('description'),
+                'planner_id' => $planner_save['id'],
+                'branding_id' => $branding_save['id'],
+            ]);
+            $details_planner->save();
+
+
+            return redirect(route('show.planners',$request->get('customer')));
+
+        } else {
+            $planner_save = new Planners([
+                'employee_id' => $request->get('employee'),
+                'path' => 'storage/administrator/uploads/logos/' . $filename,
+            ]);
+            $planner_save->save();
+
+            $details_planner = new DetailsPlanners([
+                'planner_id' => $planner_save['id'],
+                'branding_id' => $exist_branding[0]['id'],
+                'name' => $request->get('name'),
+                'description' => $request->get('description')
+            ]);
+
+
+            $details_planner->save();
+
+            return redirect(route('show.planners',$request->get('customer')));
 
 //            return view('general_manager.show_logos',compact('customer','logos'))->with('success', 'Logo  guardado!');
         }

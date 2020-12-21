@@ -138,42 +138,38 @@
                 <!-- dashboard content-->
                 <div class="col-md-9">
                     <div class="dashboard-title   fl-wrap">
-                        <h3>Información del cliente</h3>
+                        <h3>Agregar Planner </h3>
                     </div>
-                    <div class="profile-edit-container fl-wrap block_box">
-                        <div class="custom-form">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label>Nombre<i class="fal fa-user"></i></label>
-                                    <input type="text" placeholder="Address of your business" value=""/>
+                    <form method="POST" action="{{ route('store.planner') }}" accept-charset="UTF-8"
+                          enctype="multipart/form-data" >
+                        @csrf
+                        <div class="profile-edit-container fl-wrap block_box ">
+                            <div class="custom-form">
+                                <input type="hidden" name="employee" value="{{auth()->id()}}">
+                                <input type="hidden" name="customer" value="{{$customer['id']}}">
+                                <label>Nombre <span>*</span> </label>
+                                <input type="text" placeholder="Escriba el nombre" name="name" onClick="this.select()"
+                                       value="">
+                                <label>Descripción <span>*</span> </label>
+                                <textarea cols="40" rows="3" placeholder="Escriba la descripción"
+                                          name="description"></textarea>
+                                <div class="fw-separator"></div>
+                                <label>Archivo <span>*</span> </label>
+                                <div class="add-list-media-wrap fuzone">
+                                    <div class="fu-text">
+                                        <span><i class="fal fa-image"></i> Click aquí o arrastre el archivo</span>
+                                        <span class="photoUpload-files fl-wrap"></span>
+                                    </div>
+                                    <input type="file" class="form-control" name="image" >
                                 </div>
-                                <div class="col-sm-6">
-                                    <label>Correo<i class="far fa-envelope"></i>  </label>
-                                    <input type="text" placeholder="JessieManrty@domain.com" value=""/>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Phone<i class="far fa-phone"></i>  </label>
-                                    <input type="text" placeholder="+7(123)987654" value=""/>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label> Website <i class="far fa-globe"></i>  </label>
-                                    <input type="text" placeholder="themeforest.net" value=""/>
-                                </div>
-                                <div class="col-sm-12">
-                                    <label>Facebook <i class="fab fa-facebook"></i></label>
-                                    <input type="text" placeholder="https://www.facebook.com/" value=""/>
-                                    <label>Twitter<i class="fab fa-twitter"></i>  </label>
-                                    <input type="text" placeholder="https://twitter.com/" value=""/>
-                                    <label>Vkontakte<i class="fab fa-vk"></i>  </label>
-                                    <input type="text" placeholder="https://vk.com" value=""/>
-                                    <label> Instagram <i class="fab fa-instagram"></i>  </label>
-                                    <input type="text" placeholder="https://www.instagram.com/" value=""/>
-                                    <button class="btn    color2-bg  float-btn">Send Listing<i class="fal fa-paper-plane"></i></button>
-                                </div>
+                                <button type="submit" class="btn float-btn color2-bg">Guardar <i
+                                        class="fas fa-caret-right"></i></button>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
+                <!-- dashboard content end-->
             </div>
         </section>
         <!--  section  end-->

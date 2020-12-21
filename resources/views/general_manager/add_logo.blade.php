@@ -122,11 +122,8 @@
                                     {{$customer['name']}}
                                 </h3>
                                 <ul class="no-list-style">
-                                    <li><a href="{{route('show.logos',$customer['id'])}}"><i
-                                                class="fal fa-chart-line"></i>Logos</a></li>
-                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Planners <span>7</span></a>
-                                    </li>
-                                    <li><a href="dashboard-feed.html"><i class="fal fa-rss"></i>Clientes <span>7</span></a>
+                                    <li><a href="{{route('show.logos',$customer['id'])}}"><i class="fal fa-chart-line"></i>Logos</a></li>
+                                    <li><a href="{{route('show.planners',$customer['id'])}}"><i class="fal fa-rss"></i>Planners <span>7</span></a>
                                     </li>
                                 </ul>
                             </div>
